@@ -1,0 +1,32 @@
+--COUNT Serve basicamente como um return, ele retorna o numero de linhas dependendo da condicao. retorna o total de linhas selecionadas.
+
+
+Select COUNT(*) --Expecificando a contagem de todas as colunas da Tabela
+Select COUNT(Coluna1)--Expecificando a contagem da coluna1
+FROM TABELA
+
+
+--EXEMPLO
+SELECT count(*) --Contou todas as linhas da tabela person
+FROM person.Person;
+
+SELECT count(DISTINCT title) -- Contou todos menos os repetidos da tabela person
+FROM person.Person;
+
+--##DESAFIO 06
+--Eu quero saber quantos produtos tempos cadastrados em nossas tabelas de produtos(production.product)
+
+SELECT COUNT(name) --Contou todas as linha da tabela production
+FROM production.product
+
+
+--##DESAFIO 07
+--Eu quero saber quantos tamanhos de produtos temos cadastrado em nossa tabela
+SELECT count(Size)
+FROM production.product
+
+--##DESAFIO 08
+--Eu quero saber quantos tamanhos diferentes de produtos eu tenho cadastrado em nossa tabela.
+
+SELECT count(DISTINCT size)
+FROM production.product

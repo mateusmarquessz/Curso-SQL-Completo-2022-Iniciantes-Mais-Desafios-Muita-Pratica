@@ -1,0 +1,23 @@
+--BetWeen e usado para encontrar o valor entre um valor minimo e valor Maximo
+
+SELECT *
+FROM Tabela
+valor BetWeen minimo AND Maximo --Como funciona o BetWeen]
+
+E a mesma coisa que dizer:
+valor <= minimo AND valor <= maximo;
+
+--EXEMPLO
+SELECT * --todas as Colunas
+FROM Production.Product -- DataBase production tabela Product
+WHERE ListPrice between 1000 and 1500; -- Condicao que, O ultimo preco entre 1000 e 1500
+
+SELECT * --todas as Colunas
+FROM Production.Product -- DataBase production tabela Product
+WHERE ListPrice NOT between 1000 and 1500;-- Condicao que NAO sao entre 1000 e 1500
+
+
+SELECT *--todas as Colunas
+FROM HumanResources.Employee -- DataBase HumanResorces tabela Employee
+WHERE HireDate Between '2007' and '2012' -- sempre ano mes e dia
+ORDER BY HireDate desc -- Organizando a coluna HireDate

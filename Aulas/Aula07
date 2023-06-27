@@ -1,0 +1,42 @@
+--ORDER BY basicamente serve para ordenar os resultados por alguma coluna por ordem crescente ou descrescente
+
+SELECT coluna1,coluna2 --selecinou a coluna1 e 2
+FROM Tabela -- da tabela 
+ORDER BY coluna1 asc/desc -- coluna 1 crescente ou descescente
+
+
+SELECT *
+FROM Person.Person
+ORDER BY FirstName asc
+
+
+SELECT FirstName, LastName	--Seleciona a coluna FirstName, LastName
+FROM Person.Person --DataBase person e tabela person
+ORDER BY FirstName asc, LastName desc -- Coluna primeiro nomes crescente, e ultimo nome descescente
+
+SELECT MiddleName -- Seleciona a coluna MiddleName
+FROM person.person -- DataBase person e tabela person
+ORDER BY MiddleName asc -- Ordena o nome do meio por crescente
+
+
+--## DESAFIO 1
+/*
+Obter o ProductId dos 10 produtois mais caros cadastrados no sistema, listando do mais caro para o mais barato
+
+Dicas
+-Voce tera que usar a tabela Production.product
+-Voce tera que usar o ORDER BY e TOP
+-E para ordenar voce tera que usar o ODER BY ASC ou DESC dependendo do resultado que esta buscando
+*/
+
+SELECT TOP 10 ListPrice --Selecionei os 10 ListPrice
+FROM Production.Product -- Data Base Production e tabela Product
+ORDER BY ListPrice desc --Ordenei o ListPrice do maior para o menor
+--Apareceu os 10 LisPrice do maior para o menor por causa do ORDER BY
+
+--##DESAFIO 2
+--Ober o nome e numero do produto dos produtos que tem o ProductID entre 1e4
+
+SELECT TOP 4 Name, ProductNumber -- Seleciona os 4 nomes em Ordem Descrescente, mais o ProdcutNuber
+FROM Production.Product-- Data Base Production e tabela Product
+ORDER BY ProductID asc -- Ordenei o Product ID

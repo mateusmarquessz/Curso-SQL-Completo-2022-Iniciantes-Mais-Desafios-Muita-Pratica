@@ -14,7 +14,7 @@ FROM person.Person --Pegou todas as colunas do person
 SELECT Title    --Pegou somente as colunas do title do person
 FROM person.person;
 
-SELECT *    --Pegou todas as informacoes da tabela emailAddress
+SELECT *    --Pegou a DATA base person e todas as informacoes da tabela emailAddress
 FROM person.EmailAddress; 
 
 

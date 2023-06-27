@@ -1,0 +1,7 @@
+--Top Serve ele vai filtrar ou limitar a quantidade de dados do SELECT
+
+SELECT TOP 10 -- Selecionando as 10 primeiras linhas da tabela 
+FROM tabela
+
+SELECT TOP 10 * --Selecionando as 10 tabelas 
+FROM Production.Product -- DataBase Production e tabela Product
