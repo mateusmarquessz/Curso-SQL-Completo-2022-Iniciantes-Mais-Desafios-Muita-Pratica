@@ -1,0 +1,28 @@
+SELECT
+SQL Server, Postgres, Oracle, mySql
+--Precisa necessariamente ser em Maisculo
+SELECT coluna1, coluna2 --Selecionando colunas1 e 2
+FROM tabela --Para a Tabela 
+
+SELECT * --Retorna todas as colunas do banco de dados
+FROM tabela
+
+
+SELECT *
+FROM person.Person --Pegou todas as colunas do person
+
+SELECT Title    --Pegou somente as colunas do title do person
+FROM person.person;
+
+SELECT *    --Pegou todas as informacoes da tabela emailAddress
+FROM person.EmailAddress; 
+
+
+
+ --EX 01 A EQUIPE DE MARKETING PREISA DE FAER UMA PESQUISA SOBRE NOMES MAIS COMNS DE SEUS CLIENTES E PRECISA DO NOME E SOBRENOME DE TODOS OS CLIENTES QUE ESTAO CADASTRADOS NO SISTEMA
+
+ --First name, last name
+
+SELECT FirstName, LastName --Seleciono a coluna FirstName, e LastName;
+FROM person.Person; -- Da tabela Person
+Resultado do Exercicio

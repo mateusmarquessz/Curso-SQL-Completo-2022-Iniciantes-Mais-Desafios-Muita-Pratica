@@ -1,0 +1,12 @@
+SELECT DISTINCT coluna1, coluna2 --DISTINCT nao retorna os dados duplicados
+FROM tabela
+
+SELECT DISTINCT FirstName --Nao retornou os dados duplicados da coluna FirstName da Tabela person
+FROM Person.person;
+
+--## Desafio 02 ###
+--Quantos Sobrenomes unicos temos em nossa tabela.Person?
+
+--Resposta
+SELECT DISTINCT LastName
+FROM Person.person; 

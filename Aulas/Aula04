@@ -1,0 +1,68 @@
+--WHERE Serve para extrair dados expecificos
+
+Select coluna1,Coluna2;
+FROM tabela
+WHERE condicao;
+
+/*
+OPERADOR - Descricao
+=           IGUAL
+>           MAIOR QUE
+<           MENOR QUE
+>=          MAIOR QUE OU IGUAL
+<=          MENOR QUE OU IGUAL
+<>          DIFERENTE
+AND         OPERADOR LOGICO E
+OR          OPERADOR LOGICO OU
+*/
+
+SELECT * --Pega todas as colunas
+FROM Person.Person -- da Tabela Person
+WHERE LastName = 'miller' and FirstName = 'anna' -- Com a condicao que seja a coluna LastName e FirstName = "Miller" / "Anna"
+
+SELECT *--Pega todas as colunas
+FROM Production.Product -- Tabela production.Product
+WHERE color = 'blue' or color = 'black' -- Com a condicao que seja a coluna color = "blue" ou "black"
+
+SELECT *--Pega todas as colunas
+FROM Production.Product-- Tabela production.Product
+WHERE ListPrice > 1500 and ListPrice < 5000-- Com a condicao que seja a coluna ListPrice > "1500" & < "5000"
+
+SELECT *--Pega todas as colunas
+FROM Production.Product-- Tabela production.Product
+WHERE color <> 'red'-- Com a condicao que seja a coluna color diferente de "Red"
+
+--## Desafio 03 ###
+--A Equipe de producao de produtos precisa do nome de todas as pecas mais que 500kg mas nao mais que 700kg para inspecao
+--Dica weight
+
+--##RESPOSTA
+SELECT * --Seleciona todas as colunas
+FROM Production.Product -- Seleciona a tabela Production.Product
+WHERE Weight > 500 and Weight < 700 -- Condicao de peso maior que 500 e menos que 700
+
+
+
+--## Desafio 04 ###
+--Foi Pedido pelo Marketing uma relacao de todos os empregados(Employees) que sao casados
+--(Single = solteiro, married = casado) e asalariados(salaried)
+
+--##RESPOSTA
+
+SELECT *--Seleciona todas as colunas
+FROM HumanResources.Employee-- Seleciona a TABELA HumanResources.Employee
+WHERE MaritalStatus = 'M' and SalariedFlag = 1 -- Condicao que e M = Casado e Assalariados
+
+--## Desafio 05 ###
+--Um usuario chamado Peter Krebs esta devendo um pagamento, consiga o email dele para que possamos enviar uma cobranca!
+--(Voce vai ter que usar a tabela person.person e depois a tabela person.emailaddress)
+
+--##RESPOSTA
+
+SELECT *
+FROM Person.Person
+WHERE FirstName = 'Peter' and LastName = 'Krebs'
+
+SELECT *
+FROM Person.EmailAddress
+WHERE BusinessEntityID = 26
