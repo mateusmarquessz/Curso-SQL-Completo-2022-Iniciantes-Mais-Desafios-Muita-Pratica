@@ -2,5 +2,23 @@
 
 Valor IN(Valor1, valor2) 
 Color IN('blue', 'RED') --Expecificando as cores que eu quero
+valor IN(SELECT valor FROM nomeDaTabela) -- subSELECT
+
+--O In ele vai fazer a busca no banco de dados e sempre que ele encontrar o um dos valores que voce passar ele vai te retornar essas informacoes
+
+SELECT * --Seleciona todas as tabelas
+FROM Person.Person -- Data Base person. tabela person
+WHERE BusinessEntityID IN(2, 7, 13) -- Selecionando somente  ID 2, 7,  13
+-- E melhor por causa do exemplo abaixo 
 
 SELECT *
+FROM Person.Person
+--fazendo a mesma coisa que o IN so que de forma maior e mais lenta
+Where BusinessEntityID = 2
+OR BusinessEntityID = 7
+OR BusinessEntityID = 13
+
+ELECT * --Seleciona todas as tabelas
+FROM Person.Person -- Data Base person. tabela person
+WHERE BusinessEntityID NOT IN(2, 7, 13) -- Mostra todos menos os ID 2, 7,  13
+-- E melhor por causa do exemplo abaixo 

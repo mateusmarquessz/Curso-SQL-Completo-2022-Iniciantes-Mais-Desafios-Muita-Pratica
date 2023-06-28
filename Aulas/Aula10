@@ -1,0 +1,14 @@
+--Like Vamos dizer que voce quer encontrar uma pessoa no banco de dados que voce sabe que o nome dela era ovi.... alguma coisa
+
+--Like serve para achar algo com o que voce descrever
+SELECT *
+FROM person.person
+WHERE FirstName like 'ovi%' -- Caso lembre o inicio
+
+SELECT *
+FROM person.person
+WHERE FirstName like '%to'-- Caso lembre o Final
+
+SELECT *
+FROM person.person
+WHERE FirstName like '%essa%' -- Caso lembre o meio

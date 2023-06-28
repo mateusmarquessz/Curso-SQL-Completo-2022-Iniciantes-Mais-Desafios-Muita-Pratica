@@ -1,0 +1,45 @@
+--Desafios
+
+1-Quantos produtos temos cadastrado no sistema que custam mais que 1500 dolares?
+
+SELECT count(ListPrice) -- Selecionando e contando a coluna ListPrice
+FROM Production.Product -- Database production e tabela product
+WHERE ListPrice > 1500 -- ListPrice > 1500
+
+Resposta 39
+
+2-Quantas pessoas temos com o sobrenome que inicia com a letra P?
+
+SELECT count(LastName) -- Selecionando e contando a coluna LastName
+FROM Person.Person  -- Database person e tabela person
+WHERE LastName like '%p' -- Procurandoa letra p no inicio de cada LastName
+
+Resposta = 12
+
+3-Em Quantas cidades unicas estao cadastrados nosso clientes?
+
+SELECT count(DISTINCT(City)) --Contando as cidades unicas da coluna City
+FROM Person.Address 
+
+Resposta = 575
+
+4-Quais sao as cidades unicas que temos cadastrados em nosso sistema?
+
+SELECT DISTINCT City
+FROM Person.Address
+
+5-Quantos produtos Vermelhos tem o preco entre 500 a 1000 dolares?
+
+SELECT COUNT(*) -- Selecionando e contando a coluna ListPrice
+FROM Production.Product -- Database production e tabela product
+WHERE color = 'red' AND ListPrice between 500 and 1000 -- So cor vermelha entre 500 a 1000
+
+Resposta = 11
+
+6-Quantos produtos cadastrados tem a palavra 'road' no nome deles?
+
+SELECT count(*)
+FROM Production.Product -- Database production e tabela product
+WHERE Name like '%road%'
+
+Resposta = 103

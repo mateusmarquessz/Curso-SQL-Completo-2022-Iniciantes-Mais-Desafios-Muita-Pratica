@@ -2,7 +2,7 @@
 
 SELECT *
 FROM Tabela
-valor BetWeen minimo AND Maximo --Como funciona o BetWeen]
+valor BetWeen minimo AND Maximo --Como funciona o BetWeen
 
 E a mesma coisa que dizer:
 valor <= minimo AND valor <= maximo;
