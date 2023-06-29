@@ -1,0 +1,71 @@
+--GroupBy
+
+-- O Group By basicamente divided o resultado da sua pesquisa em grupos
+--Para cada grupo voce pode aplicar um funcao de agregacao, por exemplo:
+--Calcular a soma de itens
+--Contar o numero de itens naquele grupo
+
+SELECT coluna1,funcaoAgregacao(coluna2)
+FROM nomeTabela
+Group by coluna1;
+
+
+SELECT SpecialOfferID, SUM(UnitPrice) as "SOMA" --Somou todos os UnitPrice
+FROM Sales.SalesOrderDetail
+Group By SpecialOfferID -- Agrupou todas as SpecialOfferID
+
+
+SELECT ProductID, COUNT (ProductID) as "Contagem" --Contou as linhas do Produt ID
+FROM sales.SalesOrderDetail
+Group By ProductID -- Agrupou o ProductID em uma coluna e a na outra contou quantas linhas cada ID tinha
+
+SELECT FirstName, Count(FirstName) AS "CONTAGEM"
+FROM person.person
+Group BY FirstName
+--Ele contou os nomes iguais e colocou numa coluna ao lado de firstName
+
+SELECT color, AVG(ListPrice)
+FROM Production.Product
+WHERE color = 'Silver'
+Group by color
+--Aparece a media de preco por cor
+
+--##Desafio
+
+--Eu preciso saber quantas pessoas tem o mesmo MiddleName agrupadas por o MiddleName
+
+Select MiddleName, COUNT(FirstName) as "Contagem"
+From person.person
+Group By MiddleName
+--Pega a coluna MiddleName para Agrupar e conta pelo firstName
+
+--Desafio 02
+
+--Eu preciso saber em media qual e a quantiadde(quantity) que cada produto e vendido na loja
+
+SELECT ProductID, avg(OrderQty) as "Media"
+FROM sales.SalesOrderDetail
+Group by ProductID
+--Pega a coluna ProductID para Agrupar e conta pelo OrderQty
+
+--Desafio 03
+--Eu quero saber qual foram as 10 vendas que no total tiveram os maiores valores de venda(line total) por produto do maior valor para o menor
+
+SELECT TOP 10 ProductID, SUM(linetotal)
+FROM sales.SalesOrderDetail
+Group By ProductID
+ORDER By SUM(linetotal) DESC;
+--Seleciona os top 10 Product Id, e soma o linetotal
+--DataBase sales Tabela SalesPrderDetail
+--Agrupando o ProductID
+--Ordernando a soma do lineTotal para Descrescente
+
+--Desafio 04
+--Eu preciso saber quantos produtos e qual e quantidade media de produtos temos cadastrados nas nossas ordem de servico(WordOrder), agrupados por ProductID
+
+SELECT  ProductID, COUNT(ProductID) "Contagem",
+AVG(orderqty) as "Media"
+FROM Production.WorkOrder
+Group By ProductID
+--Selecionou a coluna productID, fez a contagem do ProductID, e depois a media do Orderqty
+--Agrupou o ProductID

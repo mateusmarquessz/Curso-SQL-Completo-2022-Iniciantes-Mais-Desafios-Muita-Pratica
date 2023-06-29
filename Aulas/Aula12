@@ -1,0 +1,16 @@
+--MIN MAX SUM AVG
+
+--Sao funcoes de agregracao basicamente agregam ou combinam dados de uma tabela em 1 resultado so
+
+SELECT TOP 10 sum(linetotal)  AS SOMA-- Somando todas as linhas da coluna Linetotal
+FROM Sales.SalesOrderDetail
+
+SELECT TOP 10 min(linetotal) as MENOR -- Menor valor de todas das linhas da coluna linetotal
+FROM Sales.SalesOrderDetail
+
+
+SELECT TOP 10 max(linetotal) as MAIOR -- Maior valor de todas as linhas da coluna linetotal
+FROM Sales.SalesOrderDetail
+
+SELECT TOP 10 AVG(linetotal) as Media -- Valor medio de todas as linhas da coluna linetotal
+FROM Sales.SalesOrderDetail
