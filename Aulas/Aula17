@@ -1,0 +1,25 @@
+--Tipos de joins + Desafios
+
+ A          B
+IDnome     IDnome
+1 Robo     1 Espada
+2 Macaco   2 Robo   
+3 Samurai  3 Mario
+4 Monitor  4 Samurai
+
+Primeiro tipo de join o inner Join, retorna apenas os resutlados que correspondem(existem) tanto na tabela A como na Tabela B
+
+No caso da tabela acima
+Select *FROM tabelaA
+inner Join tabelaB
+on tabelaA.nome = tabelaB.nome
+
+retorna apenas o registros iguais
+
+FULL outer join
+Full outer join retorna um conjunto de todos registros correspondentes da tabela A e Tabela B quando sao iguais. E alem disso se nao houver valores correspondetes, ele simplimente ira preencher esse lado com "null"
+
+LEFT OUTER Join
+left outer jouin retorna um conjunto de todos os registros da TabelaA, e alem disso, os registros correspondentes(quando disponivel) na tabelaB. Se nao houver registros correspondentes ele simplemente vai preencher com o "null"
+
+RiGHT outer Join a mesma coisa so que para a direita

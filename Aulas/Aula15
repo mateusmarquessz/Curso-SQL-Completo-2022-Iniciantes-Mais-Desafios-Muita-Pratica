@@ -1,0 +1,19 @@
+--As
+
+AS serve para dar apelidos para as colunas
+
+--Desafios
+1) Encontrar o firstName e lastName person.person
+2) ProductNumber da tabela production.product "numero do produto"
+3) Sales.SalesorderDetail unit price preco
+
+1= 
+SELECT FirstName as "primeiro nome", LastName as "segundo nome"
+FROM person.Person
+
+2 = 
+SELECT ProductNumber AS "Numero do produto"
+From Production.Product
+
+3= SELECT UnitPrice as "Preco"
+FROM Sales.SalesOrderDetail

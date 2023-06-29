@@ -1,0 +1,79 @@
+--Inner Join.
+
+--Existem 3 tipos de gerais de JOINS:
+--INNER JOIN, OUTER JOIN E SELF-JOIN
+
+Existe 2 tabelas cliente e endereco, e eu quero trazer informacao que nao existe na tabela cliente 
+
+nesse caso a gente faz um JOIN
+
+Primary Key = E o valor que indentifica uma tabela no caso de Cliente ClientID
+
+Foreign Key = E o valor de outra tabela em outra tabela exemplo 
+enderecoID na tabela Cliente
+
+SELECT C.ClienteID, C.Nome, E.Rua,E.Cidade
+From Cliente C
+Inner Join Endereco E ON E.Enderecoid = C.EnderecoID
+
+Estamos Agrupando o O enderco com o a tabela Cliente
+
+--Assim que ficaria basicamente
+
+2| Bruno | Rua norte | Sao Paulo
+
+--Pratica
+
+SELECT p.BusinessEntityID, p.FirstName, p.LastName,/*Outra Tabela*/ pe.EmailAddress
+From Person.Person as P
+Inner Join person.EmailAddress PE on p.BusinessEntityID = pe.BusinessEntityID
+
+--Seleciono as colunas que eu quero da primeira tabela, e depois as colunas que eu quero da outra tabela
+--Extraio A informacao da primeira tabela
+--Tiro a informacao extra da segunda tabela
+--Inner Join depois a tabela que quero retirar a informacao extra, um nome para ela para ficar mais facil de indentificar, ON = juntar a informacao baseada em alguma coluna que e comum, nesse exemplo BusinessEntityID
+
+SELECT p.ListPrice, p.Name, ps.name
+FROM Production.Product p
+inner join Production.ProductSubcategory ps on p.ProductSubcategoryID = ps.ProductSubcategoryID
+
+--Selecionei as colunas ListPrice Name e da outra tabela Selecionei outro name
+--Extrai a informacao da tabela e defini como p
+--Coloquei a segunda tabela e defini com ps o nome e depois igualei a chave primaria com a estrangeira
+
+SELECT top 10 *
+FROM person.Address PA
+Inner Join person.BusinessEntityAddress BA on BA.AddressID = PA.AddressID
+
+--Esse caso caso queira todas as colunas
+
+--Desafio
+-- Extrair das tabelas BusinessEntityID, name, phoneNumberTypeID, PhoneNumber
+--Duas tabelas
+
+Select top 10*
+from person.PhoneNumberType
+
+Select top 10*
+from person.PersonPhone
+
+SELECT Top 10 pn.PhoneNumberTypeID, pp.PhoneNumber, pn.name, pp.BusinessEntityID
+FROM person.PhoneNumberType pn
+inner join person.PersonPhone pp on pn.PhoneNumberTypeID = pp.PhoneNumberTypeID
+
+--Selecionei as 10 primeira colunas citadas, sendo pp para tabela estrangeira e pn para tabela primaria
+--defini a tabela primaria e o nome que eu queria usar nela no caso pn
+--Inner join tabela estrangeira mais nome que defini como pp, ON chaves com o mesmo nome ou ID
+
+--Desafio
+--Extrair AddressID, City, StateProvinceID, nome do estado
+
+Select top 10*
+from person.stateprovince
+
+Select top 10*
+from person.address
+
+SELECT TOP 10 pa.AddressID, pa.city, ps.StateProvinceID, ps.Name
+FROM person.StateProvince ps
+inner join person.Address pa on ps.StateProvinceID = pa.StateProvinceID
