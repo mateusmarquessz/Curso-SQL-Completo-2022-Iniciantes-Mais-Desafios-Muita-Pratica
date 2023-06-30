@@ -1,0 +1,26 @@
+--Outer Join
+
+-- Quero descobrir quais pessoas tem um cartao de credito registrado
+
+SELECT *
+FROM person.Person pp
+Inner join sales.PersonCreditCard pc on  pp.BusinessEntityID = pc.BusinessEntityID
+
+--INNER JOIN: 19118 linhas
+--Cuidado por causa que o inner join exclui linhas
+
+SELECT *
+FROM person.Person pp
+left join sales.PersonCreditCard pc on  pp.BusinessEntityID = pc.BusinessEntityID
+--Left Join : 19972 linhas
+--Isso significa que existe pessoas que nao estao com cartao registrados
+
+SELECT  19972 - 19118
+--854 Pessoa que nao tem o cartao registrado
+
+SELECT *
+FROM person.Person pp
+left join sales.PersonCreditCard pc on  pp.BusinessEntityID = pc.BusinessEntityID
+WHERE pc.BusinessEntityID is NULL
+
+--Achando pessoas sem cartao de credito

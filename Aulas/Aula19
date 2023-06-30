@@ -1,0 +1,28 @@
+--O operador union combina dois ou mais resultados de um select em um resultado apenas.
+
+SELECT coluna1,coluna2
+FROM TABELA1
+union
+SELECT coluna1,coluna2
+FROM tabela2
+
+--O union remove as duplicadas anao ser que voce use UNION ALL
+--Geralmente usa em tabelas nao normalizadas
+
+SELECT[productID], [Name], [PRODUCTNUMBER]
+FROM Production.Product
+WHERE name like '%Chain%'
+Union
+SELECT[productID], [Name], [PRODUCTNUMBER]
+FROM Production.Product
+WHERE name like '%Decal%'
+order by name desc
+
+
+SELECT FirstName, Title, MiddleName
+From person.Person
+WHERE title = 'MR.'
+UNION
+SELECT FirstName, Title, MiddleName
+From person.Person
+WHERE MiddleName = 'A'

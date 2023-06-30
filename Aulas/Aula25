@@ -1,0 +1,19 @@
+--Aula de CREATE TABLE
+
+--Sintaxe
+
+CREATE Table nomeTabela(
+
+        Coluna1 tipo restricaoDaColuna, -- SE HOUVER RESTRICAO
+        Coluna2,
+        Coluna3,
+        ...
+)
+
+--Tipos de restricao
+--NOT NULL Nao permite nulos
+--UNIQUE forca que todos os valores em uma coluna sejam diferentes
+-- Primary Key uma juncao de note null e Unique
+-- FOREIGN KEY - identifica unicamente uma linha em outra tabela
+-- CHECK forca uma condicao espeficica em uma coluna
+-- Default forca um valor padrao quando nenhum valor e passado

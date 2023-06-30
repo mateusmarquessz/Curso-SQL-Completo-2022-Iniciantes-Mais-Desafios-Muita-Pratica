@@ -1,0 +1,33 @@
+--Chaves Primarias e Estrangeiras
+
+--Vamos aprender o que sao chaves primarias e chaves Estrangeiras
+-- Vamos ver exemplos
+
+--Uma chave Primaria e basicamente uma coluna ou grupo de colunas, usada para identificar unicamente uma linha em uma tabela
+--Voce consegue criar essas chaves primarias atraves de restricoes que sao regras que voce define quando esta criando uma coluna
+--Assim quando voce faz isso voce esta criando um indice unico para aquela coluna ou grupo de colunas
+
+--Para criar chave primaria ou definir
+
+CREATE TABLE nome_Tabela(
+    nomeColuna tipodeDados PRIMARY KEY
+    nomeColuna tipodeDados .....
+)
+
+--o que e uma Chave Estrangeira
+
+--Uma Chave estrangeira e uma coluna ou grupo de colunas em uma tabela que identifica unicamente uma linha em outra tabela
+
+--Ou seja, uma chave estrangeira e definida em uma tabela onde ela e apenas uma referencia e nao contem todos os dados ali
+
+--Entao uma chave estrangeira e simplesmente uma coluna ou grupo de colunas que e uma chave primeira e outra tabela
+
+--A tabela que contem a chave estrangeira e chamada de tabela referenciadora ou tabela filho. E a tabela na qual a chave estrangeira e referenciada e chamada de tabela referenciada ou tabela pai
+
+--Uma tabela pode ter mais de uma chave estrangeira dependendo do seu relacionamento com as outras tabelas
+
+--No SQL Server voce defineuma chave estrangeira atravez de um Foreign Key Constraint ou restricao de chave estrangeira
+
+--Uma restricao de Chave estrangeira indica que os valores de uma coluan ou grupo de colunas na tabela filho correspondem aos valores na tabela pai
+
+--Nos podemos entender que uma chave estrangeira mantem a "Integridade referencial"

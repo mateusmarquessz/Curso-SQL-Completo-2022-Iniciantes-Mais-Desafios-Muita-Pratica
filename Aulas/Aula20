@@ -1,0 +1,12 @@
+Self-Join
+E basicamente uma forma de agrupar dados na mesma tabela
+
+SELECT nome_Coluna
+FROM tabelaA, tabelaB 
+WHERE condicao\
+
+-- Eu quero todos os clientes que moram na mesma regiao
+
+SELECT a.contactName, b.contactName
+FROM customers a, customers b
+Where a.region = b.region
