@@ -1,0 +1,11 @@
+Delete
+
+--Serve para deletar o valor da linha na coluna selecionado
+
+DELETE FROM nome da tabela
+WHERE CONDICAO
+
+
+--Exemplo de delete da linha 4 da tabela aula
+DELETE FROM aula
+Where id = 4

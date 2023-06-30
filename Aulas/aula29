@@ -1,0 +1,35 @@
+--Alter table
+
+--vamos aprender a alterar a estrutura de uma tabela. usando alter table
+
+--Sintaxe 
+Alter Table nomedaTabela
+acao
+
+
+--Exemplo de o que pode ser feito:
+--add, remover, or alterar uma coluna
+--Setar Valores padroes para uma coluna
+--Add ou Remover restricoes de colunas
+-- Renomar uma tabela
+
+
+ALTER TABLE youtube
+add ativo bit -- Add nova coluna
+
+Alter table youtube
+alter column categoria varchar(300) not null -- aumentando valor do varchar
+
+--Desafio
+
+Criar uma tabela nova com 3 colunas e depois
+
+create table pessoa(
+	id int primary key,
+	nome varchar(150) not null,
+	sobrenome varchar(120) not null,
+)
+1) Alterar o tipo de uma coluna!
+
+alter table pessoa
+alter column sobrenome varchar(300) not null

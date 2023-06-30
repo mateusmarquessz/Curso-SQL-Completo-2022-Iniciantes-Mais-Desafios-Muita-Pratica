@@ -17,3 +17,40 @@ CREATE Table nomeTabela(
 -- FOREIGN KEY - identifica unicamente uma linha em outra tabela
 -- CHECK forca uma condicao espeficica em uma coluna
 -- Default forca um valor padrao quando nenhum valor e passado
+
+Exemplo Youtube Lite
+
++CanalID        int Primary Key
++nome varchar(150)      not null
++ContagemInscritos      int Default 0
++DataCriacao            datetime not null
+
+
++VideoID        int Primary Key
++Nome varchar(150) not null
++Visualizacoes  int Default 0
++Like           int Default 0
++Deslikes       int Default 0
++Duracao        int not null
++CanalID        FOREIGN Key
+
+--Criancao a tabela canal
+CREATE TABLE CANAL(
+        Canalid int Primary Key,
+        nome varchar(150) not null,
+        ContagemInscritos int Default 0,
+        DataCriacao datetime not null
+)
+
+--Criando a tabela video com chave estrangeira canal
+CREATE TABLE VIDEO(
+        VideoID int Primary Key,
+        nome varchar(150) not null,
+        Visualizacoes int Default 0,
+        likes int Default 0,
+        Deslikes int Default 0,
+        Duracao int Default 0,
+        CanalID int FOREIGN Key REFERENCES Canal(CanalID)
+);
+
+--Encontre duas coisa na sua casa que podem tornar tabelas e crie 2 tabelas que tem no minimo 1 relacionamento com a outra

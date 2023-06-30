@@ -1,0 +1,55 @@
+--Insert into, serve para inserir dados nas colunas da tabelas SQL
+
+Insert into nomeTabela(coluna1, coluna2,.....)
+VALUES(Valor1, valor2) --Corresponde a coluna e quantidade e a mesma
+VALUES(Valor1, valor2)
+VALUES(Valor1, valor2)
+
+--inserindo informacoes de outra tabela
+
+Insert INTO tabelaA (coluna1) --Puxando a coluna1 da tabela A
+SELECT coluna2 --Selecionando a coluna2
+FROM TABELAB --Da tabela B
+
+
+INSERT INTO aula(id, nome) --Seleciono a tabela aula e as colunas que eu desejo colocar os valores
+VALUES(1,'aula1')--os valores na sequencia das colunas
+
+--Inserindo varios valores na tabela aula
+INSERT INTO aula(id, nome)
+VALUES(2,'aula2'),(3,'aula3'),(4,'aula4');
+
+--Criando tabela nova com os valores e colunas de outra tabela
+SELECT * INTO TabelaNova FROM aula
+
+--Desafios
+
+--1 Crie uma tabela nova
+    CREATE TABLE  tabela1(
+	id int primary key,
+	nome varchar(200),
+    )
+--2 insira uma linha de dados nela
+
+    Insert into tabela1 (id,nome)	
+    VALUES (1, 'Mateus');
+
+--3 Insira 3 linhas de dados ao mesmo tempo
+    Insert into tabela1 (id,nome)	
+    VALUES (2, 'Roberto'),(3, 'Mara'), (4, 'Claudio') ;
+
+
+--4 Crie uma segunda Tabela
+
+    CREATE TABLE  tabela2(
+	id int primary key,
+	nome varchar(200),
+ )
+
+--5 Insira 1 linha nessa tabela nova
+
+    Insert into tabela2 (id,nome)	
+    VALUES (1, 'Mateus');
+
+
+--6 Copie os dados da segunda tabela para a primeira

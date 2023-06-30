@@ -1,0 +1,33 @@
+--Update
+
+--Basicamente ser para Atualizar as linhas do banco de dados
+
+--Sintaxe
+
+Update nomeTabela
+set coluna1 = Valor1
+    coluna2 = valor2
+WHERE condicao -- caso voce nao queria atualizar todos os dados da coluna
+
+
+Update aula -- escolhendo a tabela
+set nome = 'mudei' -- mundando todas as linhas da coluna
+
+
+Update aula -- escolhendo a tabela
+set nome = 'mudei' -- mundando a linha da coluna nome
+where id = 3 -- somente o id 3
+
+
+bem suave
+
+--Desafio
+--Altere o nome de 2 linhas diferente
+
+Update aula
+set nome = 'Mateus'
+where id = 1
+
+Update aula
+set nome = 'Lucas'
+where id = 2
