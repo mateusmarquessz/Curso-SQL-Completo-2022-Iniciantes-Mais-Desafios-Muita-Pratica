@@ -10,7 +10,8 @@ IDnome     IDnome
 Primeiro tipo de join o inner Join, retorna apenas os resutlados que correspondem(existem) tanto na tabela A como na Tabela B
 
 No caso da tabela acima
-Select *FROM tabelaA
+Select *
+FROM tabelaA
 inner Join tabelaB
 on tabelaA.nome = tabelaB.nome
 
